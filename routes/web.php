@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserCon;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('createuser','App\Http\Controllers\UserCon@create');
+Route::get('users','App\Http\Controllers\UserCon@index');
+Route::get('users/{id}','App\Http\Controllers\UserCon@show');
+Route::get('users/delete/{id}','App\Http\Controllers\UserCon@delete');
+
+
